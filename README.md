@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 JavaScript Projects
 
 Welcome to my JavaScript Projects repository!
@@ -32,3 +33,6 @@ JavaScript
 🚀 Notes
 
 I’ll be updating this repository regularly as I progress through new lessons and challenges.
+=======
+# JavaScript Projects
+>>>>>>> 55e420d (Initial commit: Added setup repositry)
