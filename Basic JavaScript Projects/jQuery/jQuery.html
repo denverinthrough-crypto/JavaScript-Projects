@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Effect Example</title>
+
+  <!-- Load jQuery from Google's CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script>
+    // Wait for the document to be ready
+    $(document).ready(function(){
+
+      // When the button with ID 'hideButton' is clicked...
+      $("#hideButton").click(function(){
+
+        // Apply the fadeOut() effect to the paragraph with ID 'text'
+        // "slow" controls the speed of the fade (can also be "fast" or a number in milliseconds)
+        $("#text").fadeOut("slow");
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <h2>jQuery Effect Example</h2>
+
+  <!-- This text will fade out when the button is clicked -->
+  <p id="text">This text will fade out when you click the button below.</p>
+
+  <!-- Button to trigger the fadeOut() effect -->
+  <button id="hideButton">Fade Out</button>
+</body>
+</html>
