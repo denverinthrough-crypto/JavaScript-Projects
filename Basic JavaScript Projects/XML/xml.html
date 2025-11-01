@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display All XML Data</title>
+</head>
+<body>
+  <h2>Streamer Info (Parsed from XML)</h2>
+  <p id="XML_Example"></p>
+
+  <script>
+    // Create an XML string
+    var Streamer = "<streamer>" +
+        "<thename>DrDisrespect</thename>" +
+        "<back2back>19931994</back2back>" +
+        "<VSM>ViolenceSpeedMomentum</VSM>" +
+        "</streamer>";
+
+    // Create a new DOMParser
+    var XML_Parser = new DOMParser();
+
+    // Parse the XML string
+    var XML_Document = XML_Parser.parseFromString(Streamer, "text/xml");
+
+    // Get all child nodes inside <streamer>
+    var streamerElements = XML_Document.getElementsByTagName("streamer")[0].childNodes;
+
+    // Create an empty string to store the output
+    var output = "";
+
+    // Loop through all child nodes of <streamer>
+    for (var i = 0; i < streamerElements.length; i++) {
+      // Filter only element nodes (ignore text nodes like newlines)
+      if (streamerElements[i].nodeType === 1) {
+        var tagName = streamerElements[i].nodeName;
+        var tagValue = streamerElements[i].childNodes[0].nodeValue;
+        output += tagName + ": " + tagValue + "<br>";
+      }
+    }
+
+    // Display all tag names and values in the HTML paragraph
+    document.getElementById("XML_Example").innerHTML = output;
+  </script>
+</body>
+</html>
